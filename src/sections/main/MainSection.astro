@@ -1,65 +1,99 @@
 ﻿---
-import { Image } from 'astro:assets';
-import mainBackground from '/src/assets/main.jpeg'
-import underline from '/src/assets/underline.svg'
+import { Image } from "astro:assets";
+import mainBackground from "/src/assets/main.jpeg";
+import underline from "/src/assets/underline.svg";
+import bubblesBig from "/src/assets/test.svg";
 ---
 
 <section>
   <Image src={mainBackground} alt="Background" class="background" />
+  <h3>Profesjonalne usługi prania i auto detailingu</h3>
   <div class="heading">
     <h1>Pranie Komfortu</h1>
     <Image src={underline} alt="Pranie Komfortu logo" />
   </div>
-    <h2>Odśwież swoje otoczenie z Praniem Komfortu!</h2>
+  <h2>Odśwież swoje otoczenie z Praniem Komfortu!</h2>
+  <p>
+    Czy marzysz o idealnie czystym samochodzie, lśniących oknach czy odnowionych
+    meblach? <b>Pranie Komfortu</b> to ekspert w dziedzinie czystości, który przywróci
+    blask Twoim ulubionym przedmiotom i&nbsp;przestrzeniom.
+  </p>
+  <Image src={bubblesBig} alt={"bubbles"} class={"bubbles"} />
 </section>
 
 <style>
   section {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.8));
+      z-index: -1;
+    }
+
+    .background {
+      position: absolute;
+      inset: 0;
+      filter: brightness(40%) contrast(90%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .heading {
       position: relative;
-      color: white;
 
-      &::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.8));
-          z-index: -1;
+      h1 {
+        font-size: 5rem;
+        margin-bottom: 1rem;
       }
-      
-      .background {
-          position: absolute;
-          inset: 0;
-          filter: brightness(40%) contrast(90%);
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          z-index: -2;
+      img {
+        position: absolute;
+        top: 60%;
+        width: 100%;
       }
+    }
 
-      .heading {
-          position: relative;
+    h2 {
+      font-weight: 500;
+      font-size: 1.75rem;
+      letter-spacing: 1px;
+      margin-block: 1.5rem;
+    }
 
-          h1 {
-              font-size: 5rem;
-              margin-bottom: 1rem;
-          }
-          img {
-              position: absolute;
-              top: 60%;
-              width: 100%;
-          }
-      }
-      
-      h2 {
-          font-weight: 500;
-          font-size: 1.75rem;
-          letter-spacing: 1px;
-          margin-block: 1.5rem;
-      }
+    h3 {
+      font-weight: 300;
+      font-size: 1.75rem;
+      margin-block: 1.5rem;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1.25rem;
+      text-align: center;
+      margin-block: 1.5rem;
+      max-width: 50ch;
+    }
+
+    .bubbles {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      min-width: 400px;
+      max-width: none;
+      width: 100vw;
+      height: auto;
+    }
   }
 </style>

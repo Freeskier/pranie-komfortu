@@ -1,35 +1,135 @@
 ﻿---
-import { Image } from 'astro:assets';
-import logo from '/src/assets/logo.svg'
-import smallBubbles from '/src/assets/bubbles-small.svg'
+import { Image } from "astro:assets";
+import logo from "/src/assets/logo.svg";
+import smallBubbles from "/src/assets/bubbles-small.svg";
+import { Icon } from "astro-icon/components";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav>
+  <ul class="links">
+    <li>
+      <a href="/" aria-current={currentPath === "/" ? "page" : undefined}
+        >Strona główna</a
+      >
+    </li>
+    <li>
+      <a
+        href="/inprogress"
+        aria-current={currentPath === "/about" ? "page" : undefined}>Cennik</a
+      >
+    </li>
+    <li>
+      <a
+        href="/inprogress"
+        aria-current={currentPath === "/about" ? "page" : undefined}>Galeria</a
+      >
+    </li>
+  </ul>
   <Image src={smallBubbles} alt={"bubbles"} class={"smallBubbles"} />
   <Image src={logo} alt={"Logo Pranie Komfortu"} class={"logo"} />
+  <ul class="links">
+    <li>
+      <a href="https://www.facebook.com/PranieKomfortu/" class="social"
+        ><Icon name="mdi:instagram" size={32} /></a
+      >
+    </li>
+    <li>
+      <a href="https://www.facebook.com/PranieKomfortu/" class="social"
+        ><Icon name="mdi:facebook" size={32} /></a
+      >
+    </li>
+    <li>
+      <a href="/" class="highlight"
+        ><Icon name="tabler:phone" size={32} />Skontaktuj się</a
+      >
+    </li>
+  </ul>
 </nav>
 
 <style>
-    nav {
-        position: fixed;
-        height: 5rem;
-        width: 100%;
-        background: white;
-        z-index: 100;
-        
-        .logo {
-            position: absolute;
-            left: 50%;
-            translate: -50% 0;
-            top: 1rem;
+  nav {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 5rem;
+    width: 100%;
+    background: white;
+    z-index: 100;
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+
+      & a {
+        text-decoration: none;
+        font-weight: 600;
+        color: #09152a;
+        position: relative;
+
+        &.highlight {
+          color: white;
+          background-color: #19a0b5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 0.25rem 0.75rem;
+          border-radius: 0.5rem;
         }
-        
-        .smallBubbles {
-            position: absolute;
-            left: 50%;
-            translate: -50% 0;
-            top: 2rem;
+
+        &.social {
+          color: #19a0b5;
         }
+
+        &::before {
+          content: "";
+          width: 0;
+          height: 4px;
+          background-color: #f3bc34;
+          opacity: 0;
+          transition:
+            opacity 0.2s ease-in,
+            width 0.2s ease-in;
+          position: absolute;
+          bottom: -6px;
+          z-index: 10;
+          translate: 10% 0;
+        }
+
+        &:hover::before {
+          width: 80%;
+          opacity: 1;
+        }
+
+        &[aria-current="page"]::before {
+          width: 100%;
+          translate: 0;
+          opacity: 1;
+        }
+        &[aria-current="page"] {
+          color: #19a0b5;
+        }
+      }
     }
-  
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      translate: -50% 0;
+      top: 1rem;
+    }
+
+    .smallBubbles {
+      position: absolute;
+      left: 50%;
+      translate: -50% 0;
+      top: 2rem;
+    }
+  }
 </style>

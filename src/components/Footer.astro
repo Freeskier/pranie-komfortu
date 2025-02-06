@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import bulb from "/src/assets/footer-bulb.svg";
+import FooterMap from "./FooterMap.astro";
+---
+
+<footer>
+  <FooterMap />
+  <div class="info">
+    <div class="info-container">
+      <h3>Pranie Komfortu</h3>
+      <div class="info-item">
+        <Icon name={"tabler:map-pin"} size={32} />
+        <span>ul. Ernesta Cieślewskiego 9 m. 65</span>
+      </div>
+      <div class="info-item">
+        <Icon name={"tabler:phone"} size={32} />
+        <span>+48 342 234 645</span>
+      </div>
+      <ul class="info-item">
+        <li>
+          <a href="https://www.facebook.com/PranieKomfortu/"
+            ><Icon name="mdi:instagram" size={48} /></a
+          >
+        </li>
+        <li>
+          <a href="https://www.facebook.com/PranieKomfortu/"
+            ><Icon name="mdi:facebook" size={48} /></a
+          >
+        </li>
+      </ul>
+    </div>
+    <Image src={bulb} alt={"bulb"} />
+  </div>
+</footer>
+
+<style>
+  footer {
+    display: grid;
+    grid-template-columns: 45fr 55fr;
+    grid-template-rows: 1fr;
+    height: 25rem;
+    padding-top: 10rem;
+    overflow: hidden;
+
+    & .info {
+      height: 25rem;
+      width: 45rem;
+      position: relative;
+      grid-row: 1;
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+
+      .info-container {
+        z-index: 123;
+        color: white;
+        display: flex;
+        padding-left: 5rem;
+
+        gap: 1rem;
+        flex-direction: column;
+        font-weight: 500;
+        font-size: 1.125rem;
+
+        h3 {
+          color: #09152a;
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .info-item {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          list-style: none;
+        }
+
+        a {
+          color: white;
+        }
+      }
+
+      & {
+        img {
+          position: absolute;
+          top: -30%;
+          z-index: -1;
+        }
+      }
+    }
+  }
+</style>

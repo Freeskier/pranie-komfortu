@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import arcTop from "/src/assets/arc-top.svg";
+import arcBot from "/src/assets/arc-bot.svg";
+import SwiperContainer from "/src/components/swiper-container.svelte";
+---
+
+<section>
+  <Image src={arcTop} alt={"arc"} class={"top"} />
+  <Image src={arcBot} alt={"arc"} class={"bot"} />
+  <SwiperContainer client:visible />
+</section>
+
+<style>
+  section {
+    height: 500px;
+    background-color: #19a0b5;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+
+      &.top {
+        top: -1px;
+      }
+
+      &.bot {
+        bottom: -1px;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background-image: url("/bubbles-bg.svg");
+    }
+  }
+</style>

@@ -1,0 +1,198 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import vaccumImg from "/src/assets/vaccum.png";
+---
+
+<section>
+  <div class="features">
+    <div class={"vaccum"}>
+      <Image class={"vaccum"} src={vaccumImg} alt={"vaccum"} />
+    </div>
+    <div class="features-item margin">
+      <Icon name={"mdi:clock-check-outline"} size={64} />
+      <h4>Elastyczne godziny pracy</h4>
+      <span>Możliwość dostosowania się do grafiku klienta.</span>
+    </div>
+    <div class="features-item">
+      <Icon name={"mdi:ecology-outline"} size={64} />
+      <h4>Przyjazne dla zdrowia</h4>
+      <span
+        >Stosowane środki są bezpieczne dla domowników, w tym dzieci i zwierząt.</span
+      >
+    </div>
+    <div class="features-item">
+      <Icon name={"mdi:calendar-check-outline"} size={64} />
+      <h4>Terminowość realizacji</h4>
+      <span
+        >Dotrzymywanie umówionych terminów oraz sprawna realizacja zadań.</span
+      >
+    </div>
+    <div class="features-item margin">
+      <Icon name={"mdi:vacuum-cleaner-outline"} size={64} />
+      <h4>Nowoczesny sprzęt</h4>
+      <span
+        >Urządzenia o najwyższej skuteczności, zapewniające głębokie i
+        bezpieczne czyszczenie.</span
+      >
+    </div>
+    <div class="features-item margin">
+      <Icon name={"mdi:certificate-outline"} size={64} />
+      <h4>Certyfikowane środki czystości</h4>
+      <span
+        >Używanie preparatów posiadających atesty i certyfikaty jakości.</span
+      >
+    </div>
+    <div class="features-item">
+      <Icon name={"mdi:hand-coin-outline"} size={64} />
+      <h4>Atrakcyjne ceny i rabaty</h4>
+      <span
+        >Konkurencyjne stawki z możliwością negocjacji lub stałych zniżek dla
+        stałych klientów.</span
+      >
+    </div>
+  </div>
+  <div class="places-container">
+    <div class="places">
+      <h3>Dom</h3>
+      <span class="dot"></span>
+      <h3>Biuro</h3>
+      <span class="dot"></span>
+      <h3>Apartament</h3>
+    </div>
+    <p>
+      Zadzwoń do nas już dziś i ciesz się nieskazitelną czystością! Nasza ekipa
+      profesjonalistów zadba o każdy detal, odświeżając wnętrza i przywracając
+      im komfortowy, higieniczny charakter. Wybierz <b>Pranie Komfortu</b> i doświadcz
+      różnicy, jaką niesie prawdziwie fachowa troska o czystość.
+    </p>
+    <div class="places-features">
+      <div>
+        <Icon name={"mdi:check-bold"} size={24} />
+        <span>Jedorazowa usługa</span>
+      </div>
+      <div>
+        <Icon name={"mdi:check-bold"} size={24} />
+        <span>Cykliczne zlecenie</span>
+      </div>
+      <div>
+        <Icon name={"mdi:check-bold"} size={24} />
+        <span>Współpraca B2B</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    place-items: center;
+    gap: 10rem;
+    padding: 5rem 10rem;
+
+    & .features {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      grid-template-rows: repeat(3, auto);
+      max-width: 80rem;
+      row-gap: 1rem;
+
+      & .features-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1rem;
+
+        & h4 {
+          grid-column: 2;
+          grid-row: 1;
+          align-self: self-end;
+          color: #19a0b5;
+        }
+
+        & span {
+          grid-column: 2;
+          grid-row: 2;
+        }
+
+        & svg {
+          grid-column: 1;
+          grid-row: span 2;
+          align-self: center;
+          color: #19a0b5;
+        }
+      }
+
+      & .margin {
+        margin-left: 5rem;
+      }
+
+      & .vaccum {
+        grid-column: 2;
+        grid-row: 1 /-1;
+        position: relative;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(#f3bd34b2 10%, transparent 70%);
+        }
+      }
+    }
+
+    .places-container {
+      display: grid;
+      place-items: center;
+      gap: 1rem;
+
+      & .places {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        & h3 {
+          color: #09152a;
+          font-size: 2rem;
+        }
+
+        & .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #19a0b5;
+        }
+      }
+
+      .places-features {
+        display: flex;
+        gap: 1.5rem;
+
+        & div {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          & span {
+            font-weight: 700;
+            color: #09152a;
+          }
+        }
+      }
+
+      p {
+        max-width: 65ch;
+        text-align: center;
+        font-size: 1.125rem;
+      }
+
+      svg {
+        color: #19a0b5;
+      }
+    }
+  }
+</style>

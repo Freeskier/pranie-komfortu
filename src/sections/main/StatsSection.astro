@@ -1,0 +1,79 @@
+---
+import wavesTop from "/src/assets/stats-waves-top.svg";
+import wavesBot from "/src/assets/stats-waves-bottom.svg";
+
+import { Image } from "astro:assets";
+---
+
+<div class="waves">
+  <Image src={wavesTop} alt={"waves"} class={"top"} />
+  <Image src={wavesBot} alt={"waves "} class={"bot"} />
+  <div class="wrapper">
+    <div class="numbers">
+      <span class="highlighted">200</span>
+      zadowolonych klientów
+    </div>
+    <div class="numbers">
+      <span class="highlighted">+1K</span>
+      czystych mebli
+    </div>
+    <div class="numbers">
+      <span class="highlighted">234</span>
+      coś innego
+    </div>
+    <div class="numbers">
+      <span class="highlighted">356</span>
+      i jeszcze coś innego
+    </div>
+  </div>
+</div>
+
+<style>
+  .waves {
+    width: 100%;
+    height: 20rem;
+    position: relative;
+    background-color: #19a0b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      min-width: 400px;
+      max-width: none;
+      width: 100vw;
+      height: auto;
+
+      &.bot {
+        bottom: 0;
+      }
+
+      &.top {
+        top: 0;
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      gap: 4rem;
+
+      .numbers {
+        color: white;
+        display: grid;
+        grid-template-columns: auto 10ch;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        gap: 1rem;
+
+        .highlighted {
+          font-size: 4rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+</style>

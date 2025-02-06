@@ -1,7 +1,8 @@
---- 
-import '@fontsource-variable/montserrat';
-import '@fontsource-variable/caveat';
+---
+import "@fontsource-variable/montserrat";
+import "@fontsource-variable/caveat";
 import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -13,8 +14,9 @@ import Navigation from "../components/Navigation.astro";
     <title>Astro Basics</title>
   </head>
   <body>
-  <Navigation />
+    <Navigation />
     <slot />
+    <Footer />
   </body>
 </html>
 
@@ -29,19 +31,20 @@ import Navigation from "../components/Navigation.astro";
   body {
     font-family: "Montserrat Variable", sans-serif;
   }
-	
-	*, *::before, *::after {
-		margin: 0;
-		padding: 0;
-		
-	}
-  
-  h1 {
-      font-family: 'Caveat Variable', cursive;
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
   }
-  
+
+  h1 {
+    font-family: "Caveat Variable", cursive;
+  }
+
   img {
-      max-width: 100%;
-      display: block;
+    max-width: 100%;
+    display: block;
   }
 </style>

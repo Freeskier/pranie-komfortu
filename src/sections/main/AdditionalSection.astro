@@ -1,0 +1,54 @@
+---
+import cleaning from "/src/assets/cleaning.png";
+import { Image } from "astro:assets";
+---
+
+<section>
+  <div class="content">
+    <h3>Tutaj fajnie coś opisać</h3>
+    <p>
+      Na przykład jakie usługi serwujesz <br />Lorem Ipsumis simply dummy text
+      of the printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an unknown
+      printer took a galley of type and scrambled it to make a type specimen
+      book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged.
+    </p>
+  </div>
+  <Image src={cleaning} alt={"cleaning"} />
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 20rem;
+    padding: 8rem 10rem 0rem 10rem;
+    max-width: 70rem;
+    margin: 0 auto;
+
+    h3 {
+      color: #09152a;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 65ch;
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+
+    img {
+      width: 20rem;
+      object-fit: cover;
+      -webkit-mask-image: url("/bubble-mask.svg");
+      /* Standard syntax for other modern browsers */
+      mask-image: url("/bubble-mask.svg");
+
+      /* Additional mask properties */
+      mask-size: contain; /* Scales the mask image to cover the element */
+      mask-position: center; /* Centers the mask image on the element */
+      mask-repeat: no-repeat;
+    }
+  }
+</style>
