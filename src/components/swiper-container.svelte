@@ -3,7 +3,7 @@
   import { Pagination, EffectCoverflow } from "swiper/modules";
   import { onMount } from "svelte";
   import Icon from "@iconify/svelte";
-  import cleaningImg from "/src/assets/cleaning-0arpet.jpg";
+  import cleaningImg from "/src/assets/cleaning-carpet.jpg";
 
   let swiper: HTMLDivElement = $state()!;
 
