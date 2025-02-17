@@ -81,6 +81,7 @@
               </li>
             {/each}
           </ul>
+          <button class="more-info">Dowiedz się więcej</button>
         </div>
       </div>
     {/each}
@@ -151,6 +152,21 @@
       padding-inline: 1.5rem;
       padding-bottom: 2rem;
       margin-top: -1.5rem;
+
+      .more-info {
+        justify-self: flex-end;
+        width: fit-content;
+        background-color: transparent;
+        border: none;
+        font-family: inherit;
+        font-size: inherit;
+        color: #f3bc34;
+        text-decoration: dashed;
+        text-decoration-line: underline;
+        text-decoration-color: #f3bc34;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 0.3rem;
+      }
 
       ul {
         display: grid;
