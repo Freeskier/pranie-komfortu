@@ -14,6 +14,7 @@
   import after from "/src/assets/after_img.jpg";
   import { onMount } from "svelte";
   import { Spring } from "svelte/motion";
+  import Icon from "@iconify/svelte";
 
   //   let { beforeImg, afterImg }: Props = $props();
 
@@ -34,7 +35,7 @@
   function generateCircles(
     count: number,
     width: number,
-    height: number
+    height: number,
   ): Circle[] {
     const result: Circle[] = [];
     for (let i = 0; i < count; i++) {
@@ -49,7 +50,7 @@
   function getCircleOpacity(
     circleX: number,
     sliderX: number,
-    threshold: number = 40
+    threshold: number = 40,
   ): number {
     const distance = Math.abs(circleX - sliderX);
     // Linear fade: opacity 1 at the slider position, fading to 0 when distance >= threshold.
@@ -59,7 +60,7 @@
   function getCircleScale(
     circleX: number,
     sliderX: number,
-    threshold: number = 100
+    threshold: number = 100,
   ): number {
     const distance = Math.abs(circleX - sliderX);
     // When at the slider (distance 0), scale is 1.
@@ -119,7 +120,12 @@
       {onfocus}
       {onblur}
     />
-    <div class="thumb"></div>
+
+    <div class="thumb" style={`left: ${sliderX}px;`}>
+      <div class="icon-wrapper">
+        <Icon icon={"mdi:chevron-left-right"} width={32} />
+      </div>
+    </div>
   </div>
 </div>
 
@@ -136,6 +142,30 @@
   .thumb {
     width: 5px;
     height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    background-color: #f3bc34;
+    cursor: ew-resize;
+    pointer-events: none;
+
+    .icon-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #f3bc34;
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      :global(svg) {
+        color: white;
+      }
+    }
   }
 
   .circle-overlay {
@@ -176,6 +206,7 @@
     height: 100%;
     top: 50%;
     translate: 0 -50%;
+    z-index: 10;
   }
 
   input[type="range"] {

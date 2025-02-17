@@ -5,14 +5,20 @@ import { Image } from "astro:assets";
 
 <section>
   <div class="content">
-    <h3>Tutaj fajnie coś opisać</h3>
+    <h3>Jaki damy tytuł?</h3>
     <p>
-      Na przykład jakie usługi serwujesz <br />Lorem Ipsumis simply dummy text
-      of the printing and typesetting industry. Lorem Ipsum has been the
-      industry's standard dummy text ever since the 1500s, when an unknown
-      printer took a galley of type and scrambled it to make a type specimen
-      book. It has survived not only five centuries, but also the leap into
-      electronic typesetting, remaining essentially unchanged.
+      Pranie Komfortu to firma, która od 2024 roku specjalizuje się w praniu
+      tapicerki, czyszczeniu wykładzin, myciu okien oraz autodetailingu. Dzięki
+      nowoczesnemu sprzętowi o dużej mocy realizujemy usługi szybciej i
+      efektywniej.
+    </p>
+    <p>
+      Inwestujemy w technologie, aby zapewnić usługi na najwyższym poziomie.
+      Regularnie uczestniczymy w szkoleniach i zdobywamy certyfikaty.
+    </p>
+    <p>
+      Działamy w Małopolsce, Katowicach i okolicach oraz Żninie i okolicach,
+      oferując szybki czas realizacji i pełne zadowolenie.
     </p>
   </div>
   <Image src={cleaning} alt={"cleaning"} />
@@ -21,10 +27,15 @@ import { Image } from "astro:assets";
 <style>
   section {
     display: grid;
-    grid-template-columns: 1fr 20rem;
+    grid-template-columns: 1fr 30rem;
     padding: 8rem 10rem 0rem 10rem;
     max-width: 70rem;
     margin: 0 auto;
+
+    .content {
+      display: grid;
+      gap: 1rem;
+    }
 
     h3 {
       color: #09152a;
@@ -39,7 +50,8 @@ import { Image } from "astro:assets";
     }
 
     img {
-      width: 20rem;
+      width: 30rem;
+      height: 25rem;
       object-fit: cover;
       -webkit-mask-image: url("/bubble-mask.svg");
       /* Standard syntax for other modern browsers */
