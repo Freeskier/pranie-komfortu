@@ -152,7 +152,7 @@ import vaccumImg from "/src/assets/vaccum.png";
 
       & .places {
         display: flex;
-        gap: 2rem;
+        column-gap: 2rem;
         align-items: center;
 
         & h3 {
@@ -170,7 +170,7 @@ import vaccumImg from "/src/assets/vaccum.png";
 
       .places-features {
         display: flex;
-        gap: 1.5rem;
+        column-gap: 1.5rem;
 
         & div {
           display: flex;
@@ -199,6 +199,7 @@ import vaccumImg from "/src/assets/vaccum.png";
   @media (max-width: 1200px) {
     section {
       gap: 5rem;
+
       & .features {
         grid-template-columns: 1fr;
 
@@ -209,6 +210,16 @@ import vaccumImg from "/src/assets/vaccum.png";
         & .margin {
           margin-left: 0;
         }
+      }
+
+      & .places-features {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      & .places {
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   }

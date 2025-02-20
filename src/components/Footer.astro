@@ -92,4 +92,22 @@ import FooterMap from "./FooterMap.astro";
       }
     }
   }
+
+  @media (max-width: 1200px) {
+    footer {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 50rem;
+      width: 100%;
+
+      & .info {
+        width: 100%;
+        grid-row: 2;
+      }
+
+      & h3 {
+        font-size: 2rem !important;
+      }
+    }
+  }
 </style>
