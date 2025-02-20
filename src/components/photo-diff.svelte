@@ -132,8 +132,9 @@
 <style>
   .container {
     position: relative;
-    width: 600px; /* Fixed width */
-    height: 400px; /* Fixed height */
+    aspect-ratio: 3/2;
+    max-width: 600px;
+    width: 100%;
     overflow: hidden;
     user-select: none;
     border-radius: 1rem;
