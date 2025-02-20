@@ -90,7 +90,6 @@ import vaccumImg from "/src/assets/vaccum.png";
     display: grid;
     place-items: center;
     gap: 10rem;
-    padding: 5rem 10rem;
 
     & .features {
       display: grid;
@@ -193,6 +192,23 @@ import vaccumImg from "/src/assets/vaccum.png";
 
       svg {
         color: #19a0b5;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    section {
+      gap: 5rem;
+      & .features {
+        grid-template-columns: 1fr;
+
+        & .vaccum {
+          display: none;
+        }
+
+        & .margin {
+          margin-left: 0;
+        }
       }
     }
   }

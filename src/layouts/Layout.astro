@@ -32,6 +32,15 @@ import Footer from "../components/Footer.astro";
     font-family: "Montserrat Variable", sans-serif;
   }
 
+  :root {
+    --padding-inline: clamp(1rem, 5vw, 5rem);
+    --padding-block: clamp(1rem, 5vh, 5rem);
+  }
+
+  section {
+    padding: var(--padding-block) var(--padding-inline);
+  }
+
   *,
   *::before,
   *::after {
@@ -46,5 +55,11 @@ import Footer from "../components/Footer.astro";
   img {
     max-width: 100%;
     display: block;
+  }
+
+  @media (max-width: 1200px) {
+    :root {
+      font-size: 14px;
+    }
   }
 </style>

@@ -104,7 +104,6 @@
   }
   .swiper-wrapper {
     display: flex;
-    padding: 3rem;
     z-index: 10;
     position: relative;
   }

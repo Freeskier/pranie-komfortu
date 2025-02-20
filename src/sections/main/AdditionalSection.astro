@@ -28,7 +28,6 @@ import { Image } from "astro:assets";
   section {
     display: grid;
     grid-template-columns: 1fr 30rem;
-    padding: 8rem 10rem 0rem 10rem;
     max-width: 70rem;
     margin: 0 auto;
 
@@ -61,6 +60,17 @@ import { Image } from "astro:assets";
       mask-size: contain; /* Scales the mask image to cover the element */
       mask-position: center; /* Centers the mask image on the element */
       mask-repeat: no-repeat;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    section {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+
+      img {
+        margin: 0 auto;
+      }
     }
   }
 </style>
