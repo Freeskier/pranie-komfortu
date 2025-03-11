@@ -6,96 +6,103 @@ import bubblesBig from "/src/assets/test.svg";
 ---
 
 <section>
-  <Image src={mainBackground} alt="Background" class="background" />
-  <div class="heading">
-    <h1>Pranie Komfortu</h1>
-    <Image src={underline} alt="Pranie Komfortu logo" />
-  </div>
-  <h2>Czysta Tapicerka , lepszy komfort!</h2>
-  <p>
-    Zadbaj o swoje otoczenie! Oferujemy skuteczne czyszczenie tapicerki
-    meblowej, samochodowej oraz wykładzin, a także mycie okien i witryn. Usuwamy
-    zabrudzenia, przywracamy świeżość i dbamy o Twój komfort oraz estetykę
-    wnętrza. Sprawdź nasze usługi i poczuj różnicę!
-  </p>
-  <Image src={bubblesBig} alt={"bubbles"} class={"bubbles"} />
+	<Image src={mainBackground} alt="Background" class="background" />
+	<div class="heading">
+		<h1>Pranie Komfortu</h1>
+		<Image src={underline} alt="Pranie Komfortu logo" />
+	</div>
+	<h2>Czysta Tapicerka , lepszy komfort!</h2>
+	<p>
+		Zadbaj o swoje otoczenie! Oferujemy skuteczne czyszczenie tapicerki meblowej, samochodowej oraz
+		wykładzin, a także mycie okien i witryn. Usuwamy zabrudzenia, przywracamy świeżość i dbamy o
+		Twój komfort oraz estetykę wnętrza. Sprawdź nasze usługi i poczuj różnicę!
+	</p>
+	<Image src={bubblesBig} alt={"bubbles"} class={"bubbles"} />
 </section>
 
 <style>
-  section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: white;
-    overflow: hidden;
+	section {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		color: white;
+		overflow: hidden;
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.8));
-      z-index: -1;
-    }
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: radial-gradient(rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.8));
+			z-index: -1;
+		}
 
-    .background {
-      position: absolute;
-      inset: 0;
-      filter: brightness(40%) contrast(90%);
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
+		.background {
+			position: absolute;
+			inset: 0;
+			filter: brightness(40%) contrast(90%);
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -2;
+		}
 
-    .heading {
-      position: relative;
+		.heading {
+			position: relative;
 
-      h1 {
-        font-size: 5rem;
-        margin-bottom: 1rem;
-        text-wrap: nowrap;
-      }
+			h1 {
+				font-size: 5rem;
+				margin-bottom: 1rem;
+				text-wrap: nowrap;
 
-      img {
-        position: absolute;
-        top: 60%;
-        width: 100%;
-      }
-    }
+				@media (max-width: 1000px) {
+					font-size: 3.5rem;
+				}
+			}
 
-    h2 {
-      font-weight: 500;
-      font-size: 1.75rem;
-      letter-spacing: 1px;
-      margin-block: 1.5rem;
-    }
+			img {
+				position: absolute;
+				top: 60%;
+				width: 100%;
+			}
+		}
 
-    h3 {
-      font-weight: 300;
-      font-size: 1.75rem;
-      margin-block: 1.5rem;
-    }
+		h2 {
+			font-weight: 500;
+			font-size: 1.75rem;
+			letter-spacing: 1px;
+			margin-block: 1.5rem;
 
-    p {
-      font-weight: 300;
-      font-size: 1.25rem;
-      text-align: center;
-      margin-block: 1.5rem;
-      max-width: 50ch;
-    }
+			@media (max-width: 1000px) {
+				text-align: center;
+			}
+		}
 
-    .bubbles {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      min-width: 400px;
-      max-width: none;
-      width: 100vw;
-      height: auto;
-    }
-  }
+		h3 {
+			font-weight: 300;
+			font-size: 1.75rem;
+			margin-block: 1.5rem;
+		}
+
+		p {
+			font-weight: 300;
+			font-size: 1.25rem;
+			text-align: center;
+			margin-block: 1.5rem;
+			max-width: 50ch;
+		}
+
+		.bubbles {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			min-width: 400px;
+			max-width: none;
+			width: 100vw;
+			height: auto;
+		}
+	}
 </style>

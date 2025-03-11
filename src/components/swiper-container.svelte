@@ -116,7 +116,6 @@
 		background-color: white;
 		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 		grid-template-rows: auto auto 1fr;
-		min-width: 300px;
 
 		ul {
 			list-style: none;
