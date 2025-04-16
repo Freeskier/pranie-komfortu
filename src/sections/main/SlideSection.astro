@@ -6,48 +6,49 @@ import SwiperContainer from "/src/components/swiper-container.svelte";
 ---
 
 <section>
-  <!-- <Image src={arcTop} alt={"arc"} class={"top"} />
+	<!-- <Image src={arcTop} alt={"arc"} class={"top"} />
   <Image src={arcBot} alt={"arc"} class={"bot"} /> -->
-  <SwiperContainer client:visible />
-  <div class="bubbles"></div>
+	<SwiperContainer client:visible />
+	<div class="bubbles"></div>
 </section>
 
 <style>
-  section {
-    position: relative;
-    overflow: hidden;
-    padding-block: 8rem;
+	section {
+		position: relative;
+		overflow: hidden;
+		padding-block: 8rem;
+		padding-inline: 0 !important;
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      z-index: 1;
-      height: auto;
-      left: 0;
-      right: 0;
-      background-repeat: no-repeat;
-    }
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			z-index: 1;
+			height: auto;
+			left: 0;
+			right: 0;
+			background-repeat: no-repeat;
+		}
 
-    &::before {
-      top: 0;
-      background-image: url("/arc-top.svg");
-      aspect-ratio: 1920/21;
-    }
+		&::before {
+			top: 0;
+			background-image: url("/arc-top.svg");
+			aspect-ratio: 1920/21;
+		}
 
-    &::after {
-      bottom: -1px;
-      background-image: url("/arc-bot.svg");
-      aspect-ratio: 1920/32;
-    }
+		&::after {
+			bottom: -1px;
+			background-image: url("/arc-bot.svg");
+			aspect-ratio: 1920/32;
+		}
 
-    & .bubbles {
-      position: absolute;
-      inset: 1px 0px 1px 0px;
-      background-image: url("/bubbles-bg.svg");
-      background-size: cover;
-      background-color: #19a0b5;
-    }
-  }
+		& .bubbles {
+			position: absolute;
+			inset: 1px 0px 1px 0px;
+			background-image: url("/bubbles-bg.svg");
+			background-size: cover;
+			background-color: #19a0b5;
+		}
+	}
 </style>

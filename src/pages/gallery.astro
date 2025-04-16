@@ -1,0 +1,41 @@
+---
+import Gallery from "../components/gallery.svelte";
+import Layout from "../layouts/Layout.astro";
+import { imageSize } from "image-size";
+import fs from "node:fs";
+import path from "node:path";
+
+function getImagesFromPublic(dir: string): { src: string; width: number; height: number }[] {
+	const folderPath = path.resolve("./public", dir);
+	const files = fs.readdirSync(folderPath);
+
+	return files
+		.filter((file) => /\.(jpe?g|png|webp|avif)$/i.test(file))
+		.map((file) => {
+			const filePath = path.join(folderPath, file);
+			const buffer = fs.readFileSync(filePath); // ✅ read binary
+			const dimensions = imageSize(buffer); // ✅ pass as Buffer
+
+			return {
+				src: `/${dir}/${file}`, // public URL
+				width: dimensions.width || 0,
+				height: dimensions.height || 0,
+			};
+		});
+}
+const imgs = getImagesFromPublic("gallery");
+---
+
+<Layout>
+	<h1>Galeria</h1>
+	<Gallery client:visible images={imgs} />
+</Layout>
+
+<style>
+	h1 {
+		padding-top: 15rem;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 3rem;
+	}
+</style>

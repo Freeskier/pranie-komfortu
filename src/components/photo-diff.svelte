@@ -10,8 +10,6 @@
 		r: number;
 	};
 
-	import before from "/src/assets/before_img.jpg";
-	import after from "/src/assets/after_img.jpg";
 	import { onMount } from "svelte";
 	import { Spring } from "svelte/motion";
 	import Icon from "@iconify/svelte";
@@ -24,6 +22,7 @@
 	let circles: Circle[] = $state([]);
 	let containerWidth = $state(600);
 	let containerHeight = $state(400);
+	let currentImageIndex = $state(0);
 
 	const slider = new Slider({
 		step: 0.01,
@@ -76,10 +75,10 @@
 </script>
 
 <div bind:clientWidth={containerWidth} bind:clientHeight={containerHeight} class="container">
-	<img src={before.src} alt="After" />
+	<img src={`/before-after/before_${currentImageIndex}.jpg`} alt="After" />
 
 	<div class="before-container" style="clip-path: {clip};">
-		<img src={after.src} alt="Before" />
+		<img src={`/before-after/after_${currentImageIndex}.jpg`} alt="Before" />
 	</div>
 	<svg
 		class="circle-overlay"
@@ -115,8 +114,49 @@
 		</div>
 	</div>
 </div>
+<div class="preview-gallery">
+	{#each { length: 6 }, index}
+		<div class="preview-item" onclick={() => (currentImageIndex = index)}>
+			<img class="preview-before" src={`/before-after/before_${index}.jpg`} alt="before img" />
+			<img class="preview-after" src={`/before-after/after_${index}.jpg`} alt="after img" />
+		</div>
+	{/each}
+</div>
 
 <style>
+	.preview-gallery {
+		display: flex;
+		gap: 2rem;
+		overflow-x: auto;
+		max-width: 100%;
+	}
+
+	.preview-item {
+		max-width: 15rem;
+		min-width: 8rem;
+		aspect-ratio: 16 / 9;
+		position: relative;
+		overflow: hidden;
+		border-radius: 1rem;
+		cursor: pointer;
+		border: 3px solid transparent;
+		transition: border 300ms;
+
+		&:hover {
+			border: 3px solid #f3bc34;
+		}
+
+		img {
+			position: absolute;
+			inset: 0;
+			object-fit: contain;
+		}
+
+		img.preview-after {
+			clip-path: inset(0 50% 0 0);
+		}
+	}
+
 	.container {
 		position: relative;
 		aspect-ratio: 3/2;

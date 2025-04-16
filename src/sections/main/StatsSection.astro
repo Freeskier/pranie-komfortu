@@ -6,80 +6,80 @@ import { Image } from "astro:assets";
 ---
 
 <section class="waves">
-  <Image src={wavesTop} alt={"waves"} class={"top"} />
-  <Image src={wavesBot} alt={"waves "} class={"bot"} />
-  <div class="wrapper">
-    <div class="numbers">
-      <span class="highlighted">200</span>
-      zadowolonych klientów
-    </div>
-    <div class="numbers">
-      <span class="highlighted">+1K</span>
-      czystych mebli
-    </div>
-    <div class="numbers">
-      <span class="highlighted">234</span>
-      coś innego
-    </div>
-    <div class="numbers">
-      <span class="highlighted">356</span>
-      i jeszcze coś innego
-    </div>
-  </div>
+	<Image src={wavesTop} alt={"waves"} class={"top"} />
+	<Image src={wavesBot} alt={"waves "} class={"bot"} />
+	<div class="wrapper">
+		<div class="numbers">
+			<span class="highlighted">270</span>
+			wykonanych usług
+		</div>
+		<div class="numbers">
+			<span class="highlighted">+1K</span>
+			czystych mebli
+		</div>
+		<div class="numbers">
+			<span class="highlighted">100</span>
+			pozytywnych opinii
+		</div>
+		<div class="numbers">
+			<span class="highlighted">+2k m<sup>2</sup></span>
+			wypranych dywanów i wykładzin
+		</div>
+	</div>
 </section>
 
 <style>
-  .waves {
-    position: relative;
-    background-color: #19a0b5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-block: 10rem !important;
+	.waves {
+		position: relative;
+		background-color: #19a0b5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-block: 10rem !important;
 
-    & img {
-      position: absolute;
-      left: 0;
-      right: 0;
-      min-width: 400px;
-      max-width: none;
-      width: 100%;
-      height: auto;
+		& img {
+			position: absolute;
+			left: 0;
+			right: 0;
+			min-width: 300px;
+			max-width: none;
+			width: 100%;
+			height: auto;
 
-      &.bot {
-        bottom: -1px;
-      }
+			&.bot {
+				bottom: -1px;
+			}
 
-      &.top {
-        top: -1px;
-      }
-    }
+			&.top {
+				top: -1px;
+			}
+		}
 
-    .wrapper {
-      display: flex;
-      gap: 2rem;
+		.wrapper {
+			display: flex;
+			gap: 2rem;
 
-      .numbers {
-        color: white;
-        display: grid;
-        grid-template-columns: auto 10ch;
-        align-items: center;
-        font-size: 1.5rem;
-        font-weight: 500;
-        gap: 1rem;
+			.numbers {
+				color: white;
+				display: grid;
+				grid-template-columns: auto 10ch;
+				align-items: center;
+				font-size: 1.5rem;
+				font-weight: 500;
+				gap: 1rem;
 
-        .highlighted {
-          font-size: 4rem;
-          font-weight: 700;
-        }
-      }
-    }
-  }
+				.highlighted {
+					font-size: 4rem;
+					font-weight: 700;
+				}
+			}
+		}
+	}
 
-  @media (max-width: 1200px) {
-    .wrapper {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  }
+	@media (max-width: 1200px) {
+		.wrapper {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
 </style>

@@ -4,73 +4,72 @@ import { Image } from "astro:assets";
 ---
 
 <section>
-  <div class="content">
-    <h3>Jaki damy tytuł?</h3>
-    <p>
-      Pranie Komfortu to firma, która od 2024 roku specjalizuje się w praniu
-      tapicerki, czyszczeniu wykładzin, myciu okien oraz autodetailingu. Dzięki
-      nowoczesnemu sprzętowi o dużej mocy realizujemy usługi szybciej i
-      efektywniej.
-    </p>
-    <p>
-      Inwestujemy w technologie, aby zapewnić usługi na najwyższym poziomie.
-      Regularnie uczestniczymy w szkoleniach i zdobywamy certyfikaty.
-    </p>
-    <p>
-      Działamy w Małopolsce, Katowicach i okolicach oraz Żninie i okolicach,
-      oferując szybki czas realizacji i pełne zadowolenie.
-    </p>
-  </div>
-  <Image src={cleaning} alt={"cleaning"} />
+	<div class="content">
+		<h3>Pranie Komfortu – Profesjonalne Usługi Czyszczące</h3>
+		<p>
+			Pranie Komfortu to firma, która od 2024 roku specjalizuje się w praniu tapicerki, czyszczeniu
+			wykładzin, myciu okien oraz autodetailingu. Dzięki nowoczesnemu sprzętowi o dużej mocy
+			realizujemy usługi szybciej i efektywniej.
+		</p>
+		<p>
+			Inwestujemy w technologie, aby zapewnić usługi na najwyższym poziomie. Regularnie
+			uczestniczymy w szkoleniach i zdobywamy certyfikaty.
+		</p>
+		<p>
+			Działamy w Małopolsce, Katowicach i okolicach oraz Żninie i okolicach, oferując szybki czas
+			realizacji i pełne zadowolenie.
+		</p>
+	</div>
+	<Image src={cleaning} alt={"cleaning"} />
 </section>
 
 <style>
-  section {
-    display: grid;
-    grid-template-columns: 1fr 30rem;
-    max-width: 70rem;
-    margin: 0 auto;
+	section {
+		display: grid;
+		grid-template-columns: 1fr 30rem;
+		max-width: 70rem;
+		margin: 0 auto;
 
-    .content {
-      display: grid;
-      gap: 1rem;
-    }
+		.content {
+			display: grid;
+			gap: 1rem;
+		}
 
-    h3 {
-      color: #09152a;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+		h3 {
+			color: #09152a;
+			font-size: 2.5rem;
+			margin-bottom: 1rem;
+		}
 
-    p {
-      max-width: 65ch;
-      font-size: 1.125rem;
-      line-height: 1.4;
-    }
+		p {
+			max-width: 65ch;
+			font-size: 1.125rem;
+			line-height: 1.4;
+		}
 
-    img {
-      width: 30rem;
-      height: 25rem;
-      object-fit: cover;
-      -webkit-mask-image: url("/bubble-mask.svg");
-      /* Standard syntax for other modern browsers */
-      mask-image: url("/bubble-mask.svg");
+		img {
+			width: 30rem;
+			height: 25rem;
+			object-fit: cover;
+			-webkit-mask-image: url("/bubble-mask.svg");
+			/* Standard syntax for other modern browsers */
+			mask-image: url("/bubble-mask.svg");
 
-      /* Additional mask properties */
-      mask-size: contain; /* Scales the mask image to cover the element */
-      mask-position: center; /* Centers the mask image on the element */
-      mask-repeat: no-repeat;
-    }
-  }
+			/* Additional mask properties */
+			mask-size: contain; /* Scales the mask image to cover the element */
+			mask-position: center; /* Centers the mask image on the element */
+			mask-repeat: no-repeat;
+		}
+	}
 
-  @media (max-width: 1200px) {
-    section {
-      grid-template-columns: 1fr;
-      gap: 5rem;
+	@media (max-width: 1200px) {
+		section {
+			grid-template-columns: 1fr;
+			gap: 5rem;
 
-      img {
-        margin: 0 auto;
-      }
-    }
-  }
+			img {
+				margin: 0 auto;
+			}
+		}
+	}
 </style>

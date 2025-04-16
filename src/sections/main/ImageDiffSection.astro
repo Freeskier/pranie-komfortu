@@ -3,6 +3,11 @@ import PhotoDiff from "/src/components/photo-diff.svelte";
 ---
 
 <section>
+	<h2>Sprawdź różnicę!</h2>
+	<p>
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae tempore iure corporis
+		quaerat in repudiandae recusandae quidem esse, numquam similique.
+	</p>
 	<PhotoDiff client:visible />
 </section>
 
@@ -12,5 +17,11 @@ import PhotoDiff from "/src/components/photo-diff.svelte";
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		gap: 2rem;
+	}
+
+	p {
+		max-width: 65ch;
+		font-size: 1.125rem;
 	}
 </style>
