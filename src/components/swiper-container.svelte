@@ -6,6 +6,8 @@
 	import cleaningImg from "/src/assets/cleaning-carpet.jpg";
 
 	let swiper: HTMLDivElement = $state()!;
+	let currentExtraInfo: string = $state("");
+	let isPopoverOpen: boolean = $state(false);
 
 	onMount(() => {
 		const swipero = new Swiper(swiper, {
@@ -53,8 +55,14 @@
 			],
 			description:
 				"Profesjonalne pranie dywanów i wykładzin, które przywróci im świeżość i czystość. Szybka realizacja i wysoka jakość usług!",
-			extraInfo:
-				"Używamy nowoczesnego sprzętu, który umożliwia szybkie i skuteczne czyszczenie. Dzięki wysokiej temperaturze prania oraz profesjonalnym środkom, nasze usługi gwarantują najlepsze efekty. Dodatkowo, oferujemy suszenie dywanów na miejscu. Jeśli masz większą ilość dywanów, wykonamy usługę na wskroś, by zapewnić kompleksowe czyszczenie.",
+			extraInfo: `
+				<h2>Pranie Dywanów i Wykładzin</h2>
+				<p>Pranie dywanów i wykładzin to nasza specjalność. Używamy nowoczesnego sprzętu, który umożliwia szybkie i skuteczne czyszczenie. Dzięki wysokiej temperaturze prania oraz profesjonalnym środkom, nasze usługi gwarantują najlepsze efekty.</p>
+				<p>Dodatkowo, oferujemy suszenie dywanów na miejscu, co znacząco skraca czas oczekiwania na efekt końcowy. Jeśli masz większą ilość dywanów, wykonamy usługę na wskroś, by zapewnić kompleksowe czyszczenie.</p>
+				<div class="price-link">
+					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+				</div>
+			`,
 		},
 		{
 			icon: "mdi:car-outline",
@@ -65,8 +73,43 @@
 			],
 			description:
 				"Oferujemy dwa warianty czyszczenia wnętrza auta – standardowe oraz detailingowe. Dokładne odświeżenie tapicerki i plastików.",
-			extraInfo:
-				"Zadbaj o wnętrze swojego auta dzięki profesjonalnemu czyszczeniu i detailingowi. Pakiet standardowy: czyszczenie podsufitki, mycie okien, plastików, pranie tapicerki. Detailing: czyszczenie szczelinowe, użycie pędzelków, odkurzanie sprężonym powietrzem, dressing ochronny na plastiki.",
+			extraInfo: `
+				<h2>Pranie Tapicerki Samochodowej i Detailing Wnętrza</h2>
+				<p>Zadbaj o wnętrze swojego auta dzięki profesjonalnemu czyszczeniu i detailingowi. Oferujemy dwa pakiety:</p>
+
+				<div class="packages">
+					<div class="package">
+						<h3>Kompleksowe czyszczenie auta:</h3>
+						<ul>
+							<li>Czyszczenie podsufitki</li>
+							<li>Mycie okien wewnątrz</li>
+							<li>Czyszczenie plastików</li>
+							<li>Odkurzanie podłogi (tylko odkurzaczem)</li>
+							<li>Pranie tapicerki</li>
+							<li>Czyszczenie bagażnika</li>
+						</ul>
+					</div>
+
+					<div class="package">
+						<h3>Kompleksowe czyszczenie detailingowe auta:</h3>
+						<ul>
+							<li>Czyszczenie podsufitki</li>
+							<li>Mycie okien wewnątrz</li>
+							<li>Detailingowe czyszczenie plastików (szczelinowe, z użyciem pędzelków)</li>
+							<li>Odkurzanie podłogi (odkurzaczem oraz powietrzem usuwającym 95% piasku i brudu)</li>
+							<li>Pranie tapicerki</li>
+							<li>Nałożenie dressingu ochronnego na plastiki</li>
+							<li>Czyszczenie bagażnika</li>
+						</ul>
+					</div>
+				</div>
+
+				<p>Każdy pakiet zapewnia dokładną pielęgnację wnętrza pojazdu, dostosowaną do Twoich potrzeb. Z nami Twoje auto odzyska czystość i świeżość!</p>
+
+				<div class="price-link">
+					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+				</div>
+			`,
 		},
 		{
 			icon: "mdi:sofa",
@@ -77,8 +120,14 @@
 			],
 			description:
 				"Pranie tapicerki meblowej, które ożywi Twoje meble i usunie wszelkie zabrudzenia. Odświeżenie bez uszkodzenia materiału!",
-			extraInfo:
-				"Przywrócenie czystości Twoim meblom jest proste z naszymi usługami. Używamy tylko bezpiecznych preparatów. Zapewniamy kompleksową i dokładną usługę z wykorzystaniem nowoczesnego sprzętu.",
+			extraInfo: `
+				<h2>Pranie Tapicerki Meblowej</h2>
+				<p>Przywrócenie czystości Twoim meblom jest proste z naszymi usługami. Skorzystaj z prania tapicerki meblowej, które efektywnie usuwa brud i plamy z materiałów różnego typu.</p>
+				<p>Używamy tylko bezpiecznych preparatów, które nie uszkodzą tapicerki. Dzięki nowoczesnemu sprzętowi oraz doświadczeniu naszych pracowników, zapewniamy kompleksową i dokładną usługę.</p>
+				<div class="price-link">
+					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+				</div>
+			`,
 		},
 		{
 			icon: "mdi:window-closed-variant",
@@ -88,16 +137,28 @@
 				"Dbamy o każdy detal bez smug i zacieków.",
 			],
 			description: "Mycie okien i witryn z dbałością o każdy detal.",
-			extraInfo:
-				"Precyzyjne czyszczenie powierzchni szklanych, przywracające blask. Oferujemy mycie w domach, biurach, sklepach, do wysokości 4m. Działamy szybko i efektywnie.",
+			extraInfo: `
+				<h2>Mycie Okien/Witryn</h2>
+				<p>Nasza usługa mycia okien i witryn obejmuje precyzyjne czyszczenie powierzchni szklanych, które przywraca ich blask. Pracujemy na wysokości do 4 metrów, co pozwala nam skutecznie dotrzeć do trudno dostępnych miejsc.</p>
+				<p>Oferujemy mycie okien zarówno w domach, jak i biurach, a także czyszczenie witryn sklepowych i innych powierzchni szklanych. Działamy szybko, efektywnie i zawsze dbamy o to, by nie zostawić smug ani zacieków.</p>
+				<div class="price-link">
+					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+				</div>
+			`,
 		},
 		{
 			icon: "mdi:air-filter",
 			title: "Ozonowanie",
 			features: ["Usuwamy bakterie, wirusy i alergeny.", "Eliminujemy nieprzyjemne zapachy."],
 			description: "Ozonowanie, które skutecznie usuwa bakterie, wirusy i nieprzyjemne zapachy.",
-			extraInfo:
-				"Ozonowanie to skuteczna metoda dezynfekcji i poprawy jakości powietrza. Eliminuje alergeny i zapachy niedostępne dla tradycyjnych metod. Idealne dla alergików.",
+			extraInfo: `
+				<h2>Ozonowanie</h2>
+				<p>Ozonowanie to skuteczna metoda dezynfekcji, która pozwala na eliminację bakterii, wirusów oraz nieprzyjemnych zapachów. Dzięki ozonowi poprawiamy jakość powietrza w pomieszczeniu, a także eliminujemy alergeny i zapachy, które trudno usunąć tradycyjnymi metodami.</p>
+				<p>To świetna opcja dla osób cierpiących na alergie lub dla tych, którzy chcą zapewnić sobie czystsze i zdrowsze środowisko w swoim domu lub biurze.</p>
+				<div class="price-link">
+					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+				</div>
+			`,
 		},
 		{
 			icon: "mdi:floor-plan",
@@ -107,8 +168,14 @@
 				"Skutecznie usuwamy plamy i zabrudzenia.",
 			],
 			description: "Skuteczne czyszczenie posadzek każdego typu.",
-			extraInfo:
-				"Doczyszczanie posadzek obejmuje różne typy powierzchni: biura, sklepy, hale. Używamy profesjonalnych środków i sprzętu. Dostępne wkrótce – w trakcie szkolenia.",
+			extraInfo: `
+				<h2>Doczyszczanie Posadzek</h2>
+				<p>Doczyszczanie posadzek to nasza specjalność. Skutecznie usuwamy plamy, zabrudzenia oraz wszelkie zanieczyszczenia z różnych rodzajów powierzchni. Nasze usługi obejmują czyszczenie posadzek w domach, biurach, sklepach czy halach przemysłowych.</p>
+				<p>Dzięki profesjonalnym urządzeniom i odpowiednim środkom czyszczącym, jesteśmy w stanie przywrócić im doskonały wygląd i dbałość o każdy detal.</p>
+				<div class="notice">
+					<strong>W TRAKCIE SZKOLENIA DOSTĘPNE NIEBAWEM</strong>
+				</div>
+			`,
 		},
 		{
 			icon: "mdi:toolbox-outline",
@@ -118,8 +185,49 @@
 				"Dodatkowe akcesoria i środki na trudne zabrudzenia.",
 			],
 			description: "Chcesz samodzielnie odświeżyć tapicerkę, dywan lub auto?",
-			extraInfo:
-				"Wynajmij profesjonalny odkurzacz piorący Karcher Puzzi 10/1. W zestawie: proszki czyszczące, opryskiwacz, szczotki, ssawki. Dodatkowo: środki na plamy, wentylator Dri-Pod, farelka. Pomagamy dobrać odpowiednie środki.",
+			extraInfo: `
+				<h2>Wynajem Sprzętu Piorącego i Innych Urządzeń</h2>
+				<p>Nie masz budżetu na profesjonalne pranie tapicerki? Zrób to sam! Oferujemy wynajem odkurzacza piorącego Karcher Puzzi 10/1 wraz z chemią World of Clean, która działa lepiej niż standardowy proszek Karcher.</p>
+
+				<div class="rental-info">
+					<div class="rental-section">
+						<h3>Koszt wynajmu:</h3>
+						<ul>
+							<li>✔️ 60 zł / 24h (1 proszek gratis)</li>
+							<li>✔️ 110 zł / 48h (2 proszki gratis)</li>
+							<li>✔️ 150 zł / 72h (3 proszki gratis)</li>
+						</ul>
+					</div>
+
+					<div class="rental-section">
+						<h3>W zestawie:</h3>
+						<ul>
+							<li>✔️ Opryskiwacz 1,5L</li>
+							<li>✔️ Szczotka</li>
+							<li>✔️ Możliwość dobrania ssawki (dywan, kanapa, auto)</li>
+						</ul>
+					</div>
+
+					<div class="rental-section">
+						<h3>Dodatki:</h3>
+						<ul>
+							<li>✔️ Specjalne środki na plamy, mocz i inne trudne zabrudzenia (cena ustalana indywidualnie)</li>
+							<li>✔️ Wentylator Dri-Pod skracający czas schnięcia o połowę – 20 zł/szt.</li>
+							<li>✔️ Farelka do Dri-Pod – 5 zł/szt.</li>
+						</ul>
+					</div>
+
+					<div class="rental-section">
+						<p>Dodatkowy proszek: 8 zł/szt.</p>
+					</div>
+				</div>
+
+				<p>Nie gwarantujemy, że samemu usuną Państwo wszystkie zabrudzenia, ale na pewno pomożemy dobrać odpowiednie środki i sprzęt, aby efekt był jak najlepszy.</p>
+
+				<div class="price-link">
+					<a href="/wynajem">Sprawdź szczegóły wynajmu sprzętu</a>
+				</div>
+			`,
 		},
 	];
 </script>
@@ -145,7 +253,15 @@
 							</li>
 						{/each}
 					</ul>
-					<button popovertarget="more-info-popover" class="more-info">Dowiedz się więcej</button>
+					<button
+						class="more-info"
+						onclick={() => {
+							currentExtraInfo = slide.extraInfo;
+							isPopoverOpen = true;
+						}}
+					>
+						Dowiedz się więcej
+					</button>
 				</div>
 			</div>
 		{/each}
@@ -161,30 +277,149 @@
 	<div class="swiper-scrollbar"></div>
 </div>
 
-<div id="more-info-popover" popover></div>
+{#if isPopoverOpen}
+	<div id="more-info-popover" class="popover">
+		<div class="popover-content">
+			<button class="close-btn" onclick={() => (isPopoverOpen = false)}>
+				<Icon icon="mdi:close" width={24} />
+			</button>
+			{@html currentExtraInfo}
+		</div>
+		<div class="backdrop" onclick={() => (isPopoverOpen = false)}></div>
+	</div>
+{/if}
 
 <style>
-	#more-info-popover {
+	.popover {
 		position: fixed;
 		inset: 0;
-		width: fit-content;
-		height: fit-content;
-		margin: auto;
-		border: solid;
-		padding: 0.25em;
-		overflow: auto;
-		color: CanvasText;
-		background-color: coral;
 		z-index: 1000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-		&::backdrop {
-			backdrop-filter: blur(0px);
-			transition: backdrop-filter 300ms;
+	.popover-content {
+		width: 80%;
+		max-width: 800px;
+		max-height: 80vh;
+		overflow: auto;
+		background-color: white;
+		border-radius: 1rem;
+		padding: 2rem;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+		color: #09152a;
+		position: relative;
+		z-index: 1001;
+	}
+
+	.close-btn {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: #09152a;
+		padding: 0.5rem;
+	}
+
+	.backdrop {
+		position: fixed;
+		inset: 0;
+		background-color: rgba(9, 21, 42, 0.7);
+		backdrop-filter: blur(4px);
+		z-index: 1000;
+	}
+
+	:global(#more-info-popover h2) {
+		color: #19a0b5;
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+		font-family: "Caveat Variable", cursive;
+	}
+
+	:global(#more-info-popover h3) {
+		color: #19a0b5;
+		font-size: 1.3rem;
+		margin-top: 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	:global(#more-info-popover p) {
+		margin-bottom: 1rem;
+		line-height: 1.5;
+	}
+
+	:global(#more-info-popover ul) {
+		list-style-type: disc;
+		margin-left: 1.5rem;
+		margin-bottom: 1rem;
+		line-height: 1.5;
+	}
+
+	:global(#more-info-popover .packages) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+		margin: 1.5rem 0;
+	}
+
+	:global(#more-info-popover .package) {
+		background-color: #f7f7f7;
+		padding: 1.5rem;
+		border-radius: 0.75rem;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	:global(#more-info-popover .rental-info) {
+		background-color: #f7f7f7;
+		padding: 1.5rem;
+		border-radius: 0.75rem;
+		margin: 1.5rem 0;
+	}
+
+	:global(#more-info-popover .rental-section) {
+		margin-bottom: 1rem;
+	}
+
+	:global(#more-info-popover .price-link) {
+		margin-top: 2rem;
+		text-align: center;
+	}
+
+	:global(#more-info-popover .price-link a) {
+		background-color: #19a0b5;
+		color: white;
+		padding: 0.75rem 1.5rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 600;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	:global(#more-info-popover .price-link a:hover) {
+		background-color: #158396;
+	}
+
+	:global(#more-info-popover .notice) {
+		margin-top: 1.5rem;
+		padding: 1rem;
+		background-color: #f3bc34;
+		color: #09152a;
+		text-align: center;
+		border-radius: 0.5rem;
+		font-weight: 600;
+	}
+
+	@media (max-width: 768px) {
+		:global(#more-info-popover .packages) {
+			grid-template-columns: 1fr;
 		}
 
-		&:popover-open::backdrop {
-			backdrop-filter: blur(6px);
-			background-color: #ffffff66;
+		.popover-content {
+			width: 90%;
+			padding: 1.5rem;
 		}
 	}
 

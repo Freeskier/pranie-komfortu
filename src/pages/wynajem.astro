@@ -1,0 +1,414 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout>
+	<main>
+		<h1>Wynajem sprzętu</h1>
+
+		<section class="rental-info">
+			<div class="rental-types">
+				<div class="rental-item">
+					<Icon name="mdi:check" class="check-icon" />
+					<p>Wynajem odkurzacza piorącego i chemii.</p>
+				</div>
+				<div class="rental-item">
+					<Icon name="mdi:check" class="check-icon" />
+					<p>Wynajem parownicy, osuszacza i akcesoriów</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="rental-details">
+			<div class="detail-section">
+				<h2><Icon name="mdi:help" class="section-icon" /> Co wypierzeesz naszym odkurzaczem?</h2>
+				<ul class="detail-list">
+					<li>Narożniki, sofy, kanapy, wersalki, fotele, krzesła tapicerowane, pufy</li>
+					<li>Materace, dywany, wykładziny</li>
+					<li>Tapicerka samochodowa</li>
+					<li>Wózki dziecięce, foteliki samochodowe</li>
+				</ul>
+			</div>
+
+			<div class="detail-section">
+				<h2><Icon name="mdi:help" class="section-icon" /> Dlaczego warto?</h2>
+				<ul class="detail-list benefits">
+					<li>
+						<strong>Oszczędność</strong> – pieniędzy, czasu i miejsca
+					</li>
+					<li>
+						<strong>Efekty od razu</strong> – czysta, świeża tapicerka bez kurzu i roztoczy
+					</li>
+					<li>
+						<strong>Satysfakcja</strong> – zrobisz to sam!
+					</li>
+				</ul>
+
+				<div class="help-section">
+					<p>Pranie jest proste – zapewniamy:</p>
+					<ul class="support-list">
+						<li>
+							<Icon name="mdi:file-document" class="support-icon" /> Instrukcję obsługi
+						</li>
+						<li>
+							<Icon name="mdi:video" class="support-icon" /> Film instruktażowy
+						</li>
+						<li>
+							<Icon name="mdi:phone" class="support-icon" /> Krótkie szkolenie i wsparcie techniczne
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="detail-section">
+				<h2><Icon name="mdi:information" class="section-icon" /> Warunki wynajmu</h2>
+				<ul class="detail-list terms">
+					<li>Minimum formalności: umowa + dowód osobisty</li>
+					<li>Kaucja zależna od sprzętu</li>
+					<li>Sprzęt z 2024 roku – czyszczony i parowany po każdym użyciu</li>
+					<li>Obsługujemy osoby prywatne i firmy – wystawiamy faktury</li>
+				</ul>
+			</div>
+
+			<div class="pricelist-link">
+				<a href="/cennik">
+					<Icon name="mdi:tag" class="price-icon" />Kliknij aby sprawdzić cennik
+				</a>
+			</div>
+		</section>
+
+		<section class="price-table">
+			<h2>Wypożyczalnia Sprzętu Czyszczącego – Cennik i Informacje</h2>
+
+			<div class="table-container">
+				<h3><Icon name="mdi:tag" class="table-icon" /> Tabela – Wynajem sprzętu czyszczącego</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Sprzęt</th>
+							<th>Cena / doba</th>
+							<th>Cena / weekend</th>
+							<th>Kaucja</th>
+							<th>Zawiera</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Odkurzacz piorący Kärcher Puzzi 10/1</td>
+							<td>60 zł</td>
+							<td>100 zł</td>
+							<td>300 zł</td>
+							<td>
+								<ul>
+									<li>Ssawka do tapicerki</li>
+									<li>Ssawka szczelinowa</li>
+									<li>Ręczna szczotka</li>
+									<li>Opryskiwacz ciśnieniowy</li>
+									<li>1 porcja środka czyszczącego GRATIS</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>Wentylator-osuszacz Dri-Pod</td>
+							<td>30 zł</td>
+							<td>50 zł</td>
+							<td>100 zł</td>
+							<td>
+								<ul>
+									<li>Osusza tapicerkę i dywany</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>Parownica Kärcher SC 5</td>
+							<td>50 zł</td>
+							<td>100 zł</td>
+							<td>200 zł</td>
+							<td>
+								<ul>
+									<li>Zestaw końcówek w zestawie</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="table-container">
+				<h3>
+					<Icon name="mdi:spray" class="table-icon" /> Dodatki i środki czyszczące (opcjonalnie)
+				</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Nazwa</th>
+							<th>Cena / doba</th>
+							<th>Cena / weekend</th>
+							<th>Uwagi</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Dodatkowa porcja środka czyszczącego</td>
+							<td>8 zł</td>
+							<td>-</td>
+							<td>Na ok. 10-15 m²</td>
+						</tr>
+						<tr>
+							<td>Neutralizator zapachu</td>
+							<td>8 zł / porcja</td>
+							<td>-</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Proszek do materacy (z tlenem i wybielaczem)</td>
+							<td>10 zł / porcja</td>
+							<td>-</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Końcówka szczelinowa</td>
+							<td>5 zł</td>
+							<td>10 zł</td>
+							<td>Tylko z głównym sprzętem</td>
+						</tr>
+						<tr>
+							<td>Lampa Philips LED do auta</td>
+							<td>10 zł</td>
+							<td>20 zł</td>
+							<td>Tylko z głównym sprzętem</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="rental-terms">
+				<h3><Icon name="mdi:clipboard-list" class="terms-icon" /> Warunki wynajmu</h3>
+				<ul>
+					<li>Minimum formalności – umowa + dokument tożsamości</li>
+					<li>Sprzęt czyszczony i parowany po każdym użyciu</li>
+					<li>Chemia dobierana do rodzaju zabrudzenia</li>
+					<li>Obsługujemy osoby prywatne i firmy (Faktury bez VAT)</li>
+					<li>Zapewniamy instrukcję, film, szkolenie i wsparcie</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 1rem;
+		padding-top: 15rem;
+		align-items: center;
+		margin: 0 auto;
+		max-width: 80ch;
+
+		h1 {
+			font-size: 3rem;
+			color: #19a0b5;
+			text-align: center;
+		}
+
+		h2 {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			color: #19a0b5;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		h3 {
+			color: #19a0b5;
+			margin-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+	}
+
+	.rental-info {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	.rental-types {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.rental-item {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1.2rem;
+	}
+
+	.check-icon {
+		color: #19a0b5;
+		width: 24px;
+		height: 24px;
+	}
+
+	.more-info {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-top: 1rem;
+		text-align: center;
+	}
+
+	.rental-details {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		border-top: 1px solid #eaeaea;
+		border-bottom: 1px solid #eaeaea;
+		padding: 2rem 0;
+	}
+
+	.detail-section {
+		width: 100%;
+	}
+
+	.section-icon,
+	.table-icon,
+	.terms-icon {
+		color: #f3bc34;
+		flex-shrink: 0;
+	}
+
+	.detail-list {
+		list-style-type: disc;
+		padding-left: 2.5rem;
+		line-height: 1.6;
+	}
+
+	.benefits li {
+		margin-bottom: 0.75rem;
+	}
+
+	.help-section {
+		margin-top: 1.5rem;
+	}
+
+	.support-list {
+		list-style-type: none;
+		margin-top: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.support-list li {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.support-icon {
+		color: #19a0b5;
+	}
+
+	.pricelist-link {
+		margin-top: 1rem;
+		text-align: center;
+	}
+
+	.pricelist-link a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		background-color: #19a0b5;
+		color: white;
+		text-decoration: none;
+		padding: 0.75rem 1.5rem;
+		border-radius: 0.5rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+		transition: background-color 0.2s ease-in-out;
+	}
+
+	.pricelist-link a:hover {
+		background-color: #158396;
+	}
+
+	.price-icon {
+		color: white;
+	}
+
+	.price-note {
+		font-size: 0.9rem;
+		color: #666;
+	}
+
+	.price-table {
+		width: 100%;
+		margin-top: 2rem;
+	}
+
+	.table-container {
+		margin-bottom: 2rem;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		margin-bottom: 1rem;
+	}
+
+	th,
+	td {
+		border: 1px solid #ddd;
+		padding: 0.75rem;
+		text-align: left;
+	}
+
+	th {
+		background-color: #f7f7f7;
+		font-weight: 600;
+	}
+
+	td ul {
+		list-style-type: disc;
+		padding-left: 1.5rem;
+		margin: 0;
+	}
+
+	.rental-terms ul {
+		list-style-type: disc;
+		padding-left: 1.5rem;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		main {
+			padding-top: 10rem;
+		}
+
+		table {
+			display: block;
+			overflow-x: auto;
+		}
+
+		th,
+		td {
+			min-width: 120px;
+		}
+
+		.rental-item {
+			font-size: 1rem;
+		}
+	}
+</style>

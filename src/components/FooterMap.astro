@@ -5,295 +5,295 @@
 <div id="map"></div>
 
 <script>
-  ((g) => {
-    var h,
-      a,
-      k,
-      p = "The Google Maps JavaScript API",
-      c = "google",
-      l = "importLibrary",
-      q = "__ib__",
-      m = document,
-      b = window;
-    b = b[c] || (b[c] = {});
-    var d = b.maps || (b.maps = {}),
-      r = new Set(),
-      e = new URLSearchParams(),
-      u = () =>
-        h ||
-        (h = new Promise(async (f, n) => {
-          await (a = m.createElement("script"));
-          e.set("libraries", [...r] + "");
-          for (k in g)
-            e.set(
-              k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
-              g[k],
-            );
-          e.set("callback", c + ".maps." + q);
-          a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-          d[q] = f;
-          a.onerror = () => (h = n(Error(p + " could not load.")));
-          a.nonce = m.querySelector("script[nonce]")?.nonce || "";
-          m.head.append(a);
-        }));
-    d[l]
-      ? console.warn(p + " only loads once. Ignoring:", g)
-      : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-  })({ key: "AIzaSyBPSWz5pEVXNUEyeTuHdN2kY_wvPyZXlqc", v: "beta" });
-  let map;
+	((g) => {
+		var h,
+			a,
+			k,
+			p = "The Google Maps JavaScript API",
+			c = "google",
+			l = "importLibrary",
+			q = "__ib__",
+			m = document,
+			b = window;
+		b = b[c] || (b[c] = {});
+		var d = b.maps || (b.maps = {}),
+			r = new Set(),
+			e = new URLSearchParams(),
+			u = () =>
+				h ||
+				(h = new Promise(async (f, n) => {
+					await (a = m.createElement("script"));
+					e.set("libraries", [...r] + "");
+					for (k in g)
+						e.set(
+							k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+							g[k],
+						);
+					e.set("callback", c + ".maps." + q);
+					a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+					d[q] = f;
+					a.onerror = () => (h = n(Error(p + " could not load.")));
+					a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+					m.head.append(a);
+				}));
+		d[l]
+			? console.warn(p + " only loads once. Ignoring:", g)
+			: (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+	})({ key: "AIzaSyB6c0EmhfMaCEl1WVQ-3efqzwM0wtAMYbc", v: "beta" });
+	let map;
 
-  async function initMap() {
-    const position = { lat: 50.084612119142896, lng: 19.981360811638876 };
+	async function initMap() {
+		const position = { lat: 50.084612119142896, lng: 19.981360811638876 };
 
-    const { Map } = await google.maps.importLibrary("maps");
-    const { Marker } = await google.maps.importLibrary("marker");
+		const { Map } = await google.maps.importLibrary("maps");
+		const { Marker } = await google.maps.importLibrary("marker");
 
-    map = new Map(document.getElementById("map"), {
-      zoom: 12,
-      center: { lat: 50.08, lng: 19.88 },
-      disableDefaultUI: true,
-      styles: [
-        {
-          featureType: "administrative",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#686868",
-            },
-          ],
-        },
-        {
-          featureType: "landscape",
-          elementType: "all",
-          stylers: [
-            {
-              color: "#f2f2f2",
-            },
-          ],
-        },
-        {
-          featureType: "poi",
-          elementType: "all",
-          stylers: [
-            {
-              visibility: "off",
-            },
-          ],
-        },
-        {
-          featureType: "road",
-          elementType: "all",
-          stylers: [
-            {
-              saturation: -100,
-            },
-            {
-              lightness: 45,
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "all",
-          stylers: [
-            {
-              visibility: "simplified",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              lightness: "-22",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
-          stylers: [
-            {
-              saturation: "11",
-            },
-            {
-              lightness: "-51",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "labels.text",
-          stylers: [
-            {
-              saturation: "3",
-            },
-            {
-              lightness: "-56",
-            },
-            {
-              weight: "2.20",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              lightness: "-52",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "labels.text.stroke",
-          stylers: [
-            {
-              weight: "6.13",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "labels.icon",
-          stylers: [
-            {
-              lightness: "-10",
-            },
-            {
-              gamma: "0.94",
-            },
-            {
-              weight: "1.24",
-            },
-            {
-              saturation: "-100",
-            },
-            {
-              visibility: "off",
-            },
-          ],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "geometry",
-          stylers: [
-            {
-              lightness: "-16",
-            },
-          ],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              saturation: "-41",
-            },
-            {
-              lightness: "-41",
-            },
-          ],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "labels.text.stroke",
-          stylers: [
-            {
-              weight: "5.46",
-            },
-          ],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "labels.icon",
-          stylers: [
-            {
-              visibility: "off",
-            },
-          ],
-        },
-        {
-          featureType: "road.local",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              weight: "0.72",
-            },
-            {
-              lightness: "-16",
-            },
-          ],
-        },
-        {
-          featureType: "road.local",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              lightness: "-37",
-            },
-          ],
-        },
-        {
-          featureType: "transit",
-          elementType: "all",
-          stylers: [
-            {
-              visibility: "off",
-            },
-          ],
-        },
-        {
-          featureType: "water",
-          elementType: "all",
-          stylers: [
-            {
-              color: "#b7e4f4",
-            },
-            {
-              visibility: "on",
-            },
-          ],
-        },
-      ],
-    });
+		map = new Map(document.getElementById("map"), {
+			zoom: 12,
+			center: { lat: 50.08, lng: 19.88 },
+			disableDefaultUI: true,
+			styles: [
+				{
+					featureType: "administrative",
+					elementType: "labels.text.fill",
+					stylers: [
+						{
+							color: "#686868",
+						},
+					],
+				},
+				{
+					featureType: "landscape",
+					elementType: "all",
+					stylers: [
+						{
+							color: "#f2f2f2",
+						},
+					],
+				},
+				{
+					featureType: "poi",
+					elementType: "all",
+					stylers: [
+						{
+							visibility: "off",
+						},
+					],
+				},
+				{
+					featureType: "road",
+					elementType: "all",
+					stylers: [
+						{
+							saturation: -100,
+						},
+						{
+							lightness: 45,
+						},
+					],
+				},
+				{
+					featureType: "road.highway",
+					elementType: "all",
+					stylers: [
+						{
+							visibility: "simplified",
+						},
+					],
+				},
+				{
+					featureType: "road.highway",
+					elementType: "geometry.fill",
+					stylers: [
+						{
+							lightness: "-22",
+						},
+					],
+				},
+				{
+					featureType: "road.highway",
+					elementType: "geometry.stroke",
+					stylers: [
+						{
+							saturation: "11",
+						},
+						{
+							lightness: "-51",
+						},
+					],
+				},
+				{
+					featureType: "road.highway",
+					elementType: "labels.text",
+					stylers: [
+						{
+							saturation: "3",
+						},
+						{
+							lightness: "-56",
+						},
+						{
+							weight: "2.20",
+						},
+					],
+				},
+				{
+					featureType: "road.highway",
+					elementType: "labels.text.fill",
+					stylers: [
+						{
+							lightness: "-52",
+						},
+					],
+				},
+				{
+					featureType: "road.highway",
+					elementType: "labels.text.stroke",
+					stylers: [
+						{
+							weight: "6.13",
+						},
+					],
+				},
+				{
+					featureType: "road.highway",
+					elementType: "labels.icon",
+					stylers: [
+						{
+							lightness: "-10",
+						},
+						{
+							gamma: "0.94",
+						},
+						{
+							weight: "1.24",
+						},
+						{
+							saturation: "-100",
+						},
+						{
+							visibility: "off",
+						},
+					],
+				},
+				{
+					featureType: "road.arterial",
+					elementType: "geometry",
+					stylers: [
+						{
+							lightness: "-16",
+						},
+					],
+				},
+				{
+					featureType: "road.arterial",
+					elementType: "labels.text.fill",
+					stylers: [
+						{
+							saturation: "-41",
+						},
+						{
+							lightness: "-41",
+						},
+					],
+				},
+				{
+					featureType: "road.arterial",
+					elementType: "labels.text.stroke",
+					stylers: [
+						{
+							weight: "5.46",
+						},
+					],
+				},
+				{
+					featureType: "road.arterial",
+					elementType: "labels.icon",
+					stylers: [
+						{
+							visibility: "off",
+						},
+					],
+				},
+				{
+					featureType: "road.local",
+					elementType: "geometry.fill",
+					stylers: [
+						{
+							weight: "0.72",
+						},
+						{
+							lightness: "-16",
+						},
+					],
+				},
+				{
+					featureType: "road.local",
+					elementType: "labels.text.fill",
+					stylers: [
+						{
+							lightness: "-37",
+						},
+					],
+				},
+				{
+					featureType: "transit",
+					elementType: "all",
+					stylers: [
+						{
+							visibility: "off",
+						},
+					],
+				},
+				{
+					featureType: "water",
+					elementType: "all",
+					stylers: [
+						{
+							color: "#b7e4f4",
+						},
+						{
+							visibility: "on",
+						},
+					],
+				},
+			],
+		});
 
-    var svg =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 16 16"><path fill="#F3BC34" fill-rule="evenodd" d="M12.5 6a4.47 4.47 0 0 1-.883 2.677L8 13.5L4.383 8.677A4.5 4.5 0 1 1 12.5 6ZM14 6c0 1.34-.439 2.576-1.18 3.574L8.937 14.75L8 16l-.938-1.25L3.18 9.574A6 6 0 1 1 14 6ZM8 8a2 2 0 1 0 0-4a2 2 0 0 0 0 4Z" clip-rule="evenodd"/></svg>';
+		var svg =
+			'<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 16 16"><path fill="#F3BC34" fill-rule="evenodd" d="M12.5 6a4.47 4.47 0 0 1-.883 2.677L8 13.5L4.383 8.677A4.5 4.5 0 1 1 12.5 6ZM14 6c0 1.34-.439 2.576-1.18 3.574L8.937 14.75L8 16l-.938-1.25L3.18 9.574A6 6 0 1 1 14 6ZM8 8a2 2 0 1 0 0-4a2 2 0 0 0 0 4Z" clip-rule="evenodd"/></svg>';
 
-    var icon = {
-      url: "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg),
-      fillColor: "#FF0000",
-      fillOpacity: 1,
-      anchor: new google.maps.Point(36, 72),
-      strokeWeight: 0,
-      scale: 1,
-    };
+		var icon = {
+			url: "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg),
+			fillColor: "#FF0000",
+			fillOpacity: 1,
+			anchor: new google.maps.Point(36, 72),
+			strokeWeight: 0,
+			scale: 1,
+		};
 
-    const marker = new Marker({
-      map: map,
-      position: position,
-      title: "Pranie komfortu",
-      icon: icon,
-    });
-  }
+		const marker = new Marker({
+			map: map,
+			position: position,
+			title: "Pranie komfortu",
+			icon: icon,
+		});
+	}
 
-  initMap();
+	initMap();
 </script>
 
 <style>
-  #map {
-    grid-column: 1 / 3;
-    grid-row: 1;
-    z-index: -2;
-  }
+	#map {
+		grid-column: 1 / 3;
+		grid-row: 1;
+		z-index: -2;
+	}
 
-  @media (max-width: 1200px) {
-    #map {
-      grid-column: 1;
-      grid-row: 1;
-    }
-  }
+	@media (max-width: 1200px) {
+		#map {
+			grid-column: 1;
+			grid-row: 1;
+		}
+	}
 </style>

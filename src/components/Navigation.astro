@@ -40,12 +40,17 @@ const currentPath = Astro.url.pathname;
 				<a href="/" aria-current={currentPath === "/" ? "page" : undefined}>Strona główna</a>
 			</li>
 			<li>
-				<a href="/pricelist" aria-current={currentPath === "/pricelist" ? "page" : undefined}>
-					Cennik
+				<a href="/cennik" aria-current={currentPath === "/cennik" ? "page" : undefined}>Cennik</a>
+			</li>
+			<li>
+				<a href="/wynajem" aria-current={currentPath === "/wynajem" ? "page" : undefined}>
+					Wynajem
 				</a>
 			</li>
 			<li>
-				<a href="/gallery" aria-current={currentPath === "/about" ? "page" : undefined}>Galeria</a>
+				<a href="/galeria" aria-current={currentPath === "/galeria" ? "page" : undefined}>
+					Galeria
+				</a>
 			</li>
 		</ul>
 

@@ -6,60 +6,60 @@ import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
-  </head>
-  <body>
-    <Navigation />
-    <slot />
-    <Footer />
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Pranie Komfortu</title>
+	</head>
+	<body>
+		<Navigation />
+		<slot />
+		<Footer />
+	</body>
 </html>
 
 <style is:global>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
 
-  body {
-    font-family: "Montserrat Variable", sans-serif;
-  }
+	body {
+		font-family: "Montserrat Variable", sans-serif;
+	}
 
-  :root {
-    --padding-inline: clamp(1rem, 5vw, 5rem);
-    --padding-block: clamp(1rem, 5vh, 5rem);
-  }
+	:root {
+		--padding-inline: clamp(1rem, 5vw, 5rem);
+		--padding-block: clamp(1rem, 5vh, 5rem);
+	}
 
-  section {
-    padding: var(--padding-block) var(--padding-inline);
-  }
+	section {
+		padding: var(--padding-block) var(--padding-inline);
+	}
 
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-  }
+	*,
+	*::before,
+	*::after {
+		margin: 0;
+		padding: 0;
+	}
 
-  h1 {
-    font-family: "Caveat Variable", cursive;
-  }
+	h1 {
+		font-family: "Caveat Variable", cursive;
+	}
 
-  img {
-    max-width: 100%;
-    display: block;
-  }
+	img {
+		max-width: 100%;
+		display: block;
+	}
 
-  @media (max-width: 1200px) {
-    :root {
-      font-size: 14px;
-    }
-  }
+	@media (max-width: 1200px) {
+		:root {
+			font-size: 14px;
+		}
+	}
 </style>
