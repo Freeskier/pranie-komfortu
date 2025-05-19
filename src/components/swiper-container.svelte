@@ -47,6 +47,37 @@
 
 	const slides = [
 		{
+			icon: "mdi:floor-plan",
+			title: "Doczyszczanie posadzek",
+			features: [
+				"Czyszczenie posadzek w domach, firmach i halach.",
+				"Skutecznie usuwamy plamy i zabrudzenia.",
+			],
+			description: "Skuteczne czyszczenie posadzek każdego typu.",
+			extraInfo: `
+			<h2>Doczyszczanie Posadzek</h2>
+			<p>Doczyszczanie posadzek to nasza specjalność. Skutecznie usuwamy plamy, zabrudzenia oraz wszelkie zanieczyszczenia z różnych rodzajów powierzchni. Nasze usługi obejmują czyszczenie posadzek w domach, biurach, sklepach czy halach przemysłowych.</p>
+			<p>Dzięki profesjonalnym urządzeniom i odpowiednim środkom czyszczącym, jesteśmy w stanie przywrócić im doskonały wygląd i dbałość o każdy detal.</p>
+			<div class="notice">
+				<strong>W TRAKCIE SZKOLENIA DOSTĘPNE NIEBAWEM</strong>
+			</div>
+		`,
+		},
+		{
+			icon: "mdi:air-filter",
+			title: "Ozonowanie",
+			features: ["Usuwamy bakterie, wirusy i alergeny.", "Eliminujemy nieprzyjemne zapachy."],
+			description: "Ozonowanie, które skutecznie usuwa bakterie, wirusy i nieprzyjemne zapachy.",
+			extraInfo: `
+				<h2>Ozonowanie</h2>
+				<p>Ozonowanie to skuteczna metoda dezynfekcji, która pozwala na eliminację bakterii, wirusów oraz nieprzyjemnych zapachów. Dzięki ozonowi poprawiamy jakość powietrza w pomieszczeniu, a także eliminujemy alergeny i zapachy, które trudno usunąć tradycyjnymi metodami.</p>
+				<p>To świetna opcja dla osób cierpiących na alergie lub dla tych, którzy chcą zapewnić sobie czystsze i zdrowsze środowisko w swoim domu lub biurze.</p>
+				<div class="price-link">
+					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+				</div>
+			`,
+		},
+		{
 			icon: "mdi:carpet",
 			title: "Pranie dywanów i wykładzin",
 			features: [
@@ -59,6 +90,24 @@
 				<h2>Pranie Dywanów i Wykładzin</h2>
 				<p>Pranie dywanów i wykładzin to nasza specjalność. Używamy nowoczesnego sprzętu, który umożliwia szybkie i skuteczne czyszczenie. Dzięki wysokiej temperaturze prania oraz profesjonalnym środkom, nasze usługi gwarantują najlepsze efekty.</p>
 				<p>Dodatkowo, oferujemy suszenie dywanów na miejscu, co znacząco skraca czas oczekiwania na efekt końcowy. Jeśli masz większą ilość dywanów, wykonamy usługę na wskroś, by zapewnić kompleksowe czyszczenie.</p>
+				<div class="price-link">
+					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+				</div>
+			`,
+		},
+		{
+			icon: "mdi:sofa",
+			title: "Pranie tapicerki meblowej",
+			features: [
+				"Skutecznie usuwamy brud i plamy z mebli.",
+				"Używamy bezpiecznych środków czystości.",
+			],
+			description:
+				"Pranie tapicerki meblowej, które ożywi Twoje meble i usunie wszelkie zabrudzenia. Odświeżenie bez uszkodzenia materiału!",
+			extraInfo: `
+				<h2>Pranie Tapicerki Meblowej</h2>
+				<p>Przywrócenie czystości Twoim meblom jest proste z naszymi usługami. Skorzystaj z prania tapicerki meblowej, które efektywnie usuwa brud i plamy z materiałów różnego typu.</p>
+				<p>Używamy tylko bezpiecznych preparatów, które nie uszkodzą tapicerki. Dzięki nowoczesnemu sprzętowi oraz doświadczeniu naszych pracowników, zapewniamy kompleksową i dokładną usługę.</p>
 				<div class="price-link">
 					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
 				</div>
@@ -111,24 +160,7 @@
 				</div>
 			`,
 		},
-		{
-			icon: "mdi:sofa",
-			title: "Pranie tapicerki meblowej",
-			features: [
-				"Skutecznie usuwamy brud i plamy z mebli.",
-				"Używamy bezpiecznych środków czystości.",
-			],
-			description:
-				"Pranie tapicerki meblowej, które ożywi Twoje meble i usunie wszelkie zabrudzenia. Odświeżenie bez uszkodzenia materiału!",
-			extraInfo: `
-				<h2>Pranie Tapicerki Meblowej</h2>
-				<p>Przywrócenie czystości Twoim meblom jest proste z naszymi usługami. Skorzystaj z prania tapicerki meblowej, które efektywnie usuwa brud i plamy z materiałów różnego typu.</p>
-				<p>Używamy tylko bezpiecznych preparatów, które nie uszkodzą tapicerki. Dzięki nowoczesnemu sprzętowi oraz doświadczeniu naszych pracowników, zapewniamy kompleksową i dokładną usługę.</p>
-				<div class="price-link">
-					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
-				</div>
-			`,
-		},
+
 		{
 			icon: "mdi:window-closed-variant",
 			title: "Mycie okien i witryn",
@@ -146,37 +178,7 @@
 				</div>
 			`,
 		},
-		{
-			icon: "mdi:air-filter",
-			title: "Ozonowanie",
-			features: ["Usuwamy bakterie, wirusy i alergeny.", "Eliminujemy nieprzyjemne zapachy."],
-			description: "Ozonowanie, które skutecznie usuwa bakterie, wirusy i nieprzyjemne zapachy.",
-			extraInfo: `
-				<h2>Ozonowanie</h2>
-				<p>Ozonowanie to skuteczna metoda dezynfekcji, która pozwala na eliminację bakterii, wirusów oraz nieprzyjemnych zapachów. Dzięki ozonowi poprawiamy jakość powietrza w pomieszczeniu, a także eliminujemy alergeny i zapachy, które trudno usunąć tradycyjnymi metodami.</p>
-				<p>To świetna opcja dla osób cierpiących na alergie lub dla tych, którzy chcą zapewnić sobie czystsze i zdrowsze środowisko w swoim domu lub biurze.</p>
-				<div class="price-link">
-					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
-				</div>
-			`,
-		},
-		{
-			icon: "mdi:floor-plan",
-			title: "Doczyszczanie posadzek",
-			features: [
-				"Czyszczenie posadzek w domach, firmach i halach.",
-				"Skutecznie usuwamy plamy i zabrudzenia.",
-			],
-			description: "Skuteczne czyszczenie posadzek każdego typu.",
-			extraInfo: `
-				<h2>Doczyszczanie Posadzek</h2>
-				<p>Doczyszczanie posadzek to nasza specjalność. Skutecznie usuwamy plamy, zabrudzenia oraz wszelkie zanieczyszczenia z różnych rodzajów powierzchni. Nasze usługi obejmują czyszczenie posadzek w domach, biurach, sklepach czy halach przemysłowych.</p>
-				<p>Dzięki profesjonalnym urządzeniom i odpowiednim środkom czyszczącym, jesteśmy w stanie przywrócić im doskonały wygląd i dbałość o każdy detal.</p>
-				<div class="notice">
-					<strong>W TRAKCIE SZKOLENIA DOSTĘPNE NIEBAWEM</strong>
-				</div>
-			`,
-		},
+
 		{
 			icon: "mdi:toolbox-outline",
 			title: "Wynajem sprzętu czyszczącego",
@@ -194,8 +196,6 @@
 						<h3>Koszt wynajmu:</h3>
 						<ul>
 							<li>✔️ 60 zł / 24h (1 proszek gratis)</li>
-							<li>✔️ 110 zł / 48h (2 proszki gratis)</li>
-							<li>✔️ 150 zł / 72h (3 proszki gratis)</li>
 						</ul>
 					</div>
 
@@ -212,8 +212,8 @@
 						<h3>Dodatki:</h3>
 						<ul>
 							<li>✔️ Specjalne środki na plamy, mocz i inne trudne zabrudzenia (cena ustalana indywidualnie)</li>
-							<li>✔️ Wentylator Dri-Pod skracający czas schnięcia o połowę – 20 zł/szt.</li>
-							<li>✔️ Farelka do Dri-Pod – 5 zł/szt.</li>
+							<li>✔️ Wentylator Dri-Pod skracający czas schnięcia o połowę – 30 zł/dobę</li>
+							<li>✔️ Farelka do Dri-Pod – 5 zł/dobę</li>
 						</ul>
 					</div>
 
@@ -352,7 +352,7 @@
 	}
 
 	:global(#more-info-popover ul) {
-		list-style-type: disc;
+		list-style-type: none;
 		margin-left: 1.5rem;
 		margin-bottom: 1rem;
 		line-height: 1.5;

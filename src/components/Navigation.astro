@@ -8,6 +8,8 @@ const currentPath = Astro.url.pathname;
 ---
 
 <script>
+	import { doc } from "prettier";
+
 	hideLogo();
 
 	const toggleButton = document.querySelector(".menu-toggle") as HTMLElement;
@@ -29,6 +31,13 @@ const currentPath = Astro.url.pathname;
 			nav.classList.remove("scrolled");
 		}
 	}
+
+	const contact = document.querySelector(".highlight");
+
+	contact?.addEventListener("click", (e) => {
+		const footer = document.querySelector("footer");
+		footer?.scrollIntoView({ behavior: "smooth" });
+	});
 </script>
 
 <nav>
@@ -66,7 +75,9 @@ const currentPath = Astro.url.pathname;
 				</a>
 			</li>
 			<li>
-				<a href="/" class="highlight"><Icon name="tabler:phone" size={32} />Skontaktuj się</a>
+				<a class="highlight">
+					<Icon name="tabler:phone" size={32} />Skontaktuj się
+				</a>
 			</li>
 		</ul>
 	</div>
@@ -117,6 +128,7 @@ const currentPath = Astro.url.pathname;
 						gap: 0.5rem;
 						padding: 0.25rem 0.75rem;
 						border-radius: 0.5rem;
+						cursor: pointer;
 					}
 
 					&.social {
