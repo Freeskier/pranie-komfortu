@@ -73,7 +73,7 @@
 				<p>Ozonowanie to skuteczna metoda dezynfekcji, która pozwala na eliminację bakterii, wirusów oraz nieprzyjemnych zapachów. Dzięki ozonowi poprawiamy jakość powietrza w pomieszczeniu, a także eliminujemy alergeny i zapachy, które trudno usunąć tradycyjnymi metodami.</p>
 				<p>To świetna opcja dla osób cierpiących na alergie lub dla tych, którzy chcą zapewnić sobie czystsze i zdrowsze środowisko w swoim domu lub biurze.</p>
 				<div class="price-link">
-					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+					<a href="/cennik#ozonowanie">Sprawdź szacunkowy koszt usługi – Cennik</a>
 				</div>
 			`,
 		},
@@ -91,7 +91,7 @@
 				<p>Pranie dywanów i wykładzin to nasza specjalność. Używamy nowoczesnego sprzętu, który umożliwia szybkie i skuteczne czyszczenie. Dzięki wysokiej temperaturze prania oraz profesjonalnym środkom, nasze usługi gwarantują najlepsze efekty.</p>
 				<p>Dodatkowo, oferujemy suszenie dywanów na miejscu, co znacząco skraca czas oczekiwania na efekt końcowy. Jeśli masz większą ilość dywanów, wykonamy usługę na wskroś, by zapewnić kompleksowe czyszczenie.</p>
 				<div class="price-link">
-					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+					<a href="/cennik#pranie-dywanow-i-wykładzin">Sprawdź szacunkowy koszt usługi – Cennik</a>
 				</div>
 			`,
 		},
@@ -109,7 +109,7 @@
 				<p>Przywrócenie czystości Twoim meblom jest proste z naszymi usługami. Skorzystaj z prania tapicerki meblowej, które efektywnie usuwa brud i plamy z materiałów różnego typu.</p>
 				<p>Używamy tylko bezpiecznych preparatów, które nie uszkodzą tapicerki. Dzięki nowoczesnemu sprzętowi oraz doświadczeniu naszych pracowników, zapewniamy kompleksową i dokładną usługę.</p>
 				<div class="price-link">
-					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+					<a href="/cennik#pranie-tapicerki-meblowej">Sprawdź szacunkowy koszt usługi – Cennik</a>
 				</div>
 			`,
 		},
@@ -156,7 +156,7 @@
 				<p>Każdy pakiet zapewnia dokładną pielęgnację wnętrza pojazdu, dostosowaną do Twoich potrzeb. Z nami Twoje auto odzyska czystość i świeżość!</p>
 
 				<div class="price-link">
-					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+					<a href="/cennik#pranie-tapicerki-samochodowej">Sprawdź szacunkowy koszt usługi – Cennik</a>
 				</div>
 			`,
 		},
@@ -174,7 +174,7 @@
 				<p>Nasza usługa mycia okien i witryn obejmuje precyzyjne czyszczenie powierzchni szklanych, które przywraca ich blask. Pracujemy na wysokości do 4 metrów, co pozwala nam skutecznie dotrzeć do trudno dostępnych miejsc.</p>
 				<p>Oferujemy mycie okien zarówno w domach, jak i biurach, a także czyszczenie witryn sklepowych i innych powierzchni szklanych. Działamy szybko, efektywnie i zawsze dbamy o to, by nie zostawić smug ani zacieków.</p>
 				<div class="price-link">
-					<a href="/cennik">Sprawdź szacunkowy koszt usługi – Cennik</a>
+					<a href="/cennik#mycie-okien-i-witryn">Sprawdź szacunkowy koszt usługi – Cennik</a>
 				</div>
 			`,
 		},
